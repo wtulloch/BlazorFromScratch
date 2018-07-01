@@ -1,0 +1,22 @@
+﻿@inherits Microsoft.AspNetCore.Blazor.Layouts.BlazorLayoutComponent
+
+<header>
+    <h1>From Scratch</h1>
+</header>
+
+<nav>
+    <a >Master Data Management</a>
+    <a >Invoicing</a>
+    <a >Accounting</a>
+</nav>
+
+@Body
+
+<footer>
+    &copy; by @CopyrightMessage
+</footer>
+
+@functions {
+    public string CopyrightMessage { get; set; }
+   
+}
