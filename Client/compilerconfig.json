@@ -1,6 +1,9 @@
 ﻿[
   {
     "outputFile": "wwwroot/css/main.css",
-    "inputFile": "ClientAssets/styles/main.scss"
+    "inputFile": "ClientAssets/styles/main.scss",
+    "minify": {
+     "enabled":  true 
+    }
   }
 ]
