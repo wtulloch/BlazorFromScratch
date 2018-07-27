@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Microsoft.AspNetCore.Blazor.Browser.Rendering;
-using Microsoft.AspNetCore.Blazor.Browser.Services;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.AspNetCore.Blazor.Hosting;
 
 namespace Client
 {
@@ -11,9 +6,11 @@ namespace Client
     {
         static void Main(string[] args)
         {
-            var serviceProvider = new BrowserServiceProvider(services => { });
-
-            new BrowserRenderer(serviceProvider).AddComponent<App>("app");
+            CreateHostBuilder(args).Build().Run();
         }
+
+        public static IWebAssemblyHostBuilder CreateHostBuilder(string[] args) =>
+            BlazorWebAssemblyHost.CreateDefaultBuilder()
+                .UseBlazorStartup<Startup>();
     }
 }
